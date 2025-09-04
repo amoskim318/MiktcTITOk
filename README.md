@@ -5,6 +5,9 @@ Want detailed info on any TikTok user without logging in or using API keys? **Mi
 <p align="center">
   <img src="images/demo1.png" alt="Demo Screenshot 1" width="500">
 </p>
+<p align="center">
+  <img src="images/demo2.png" alt="Demo Screenshot 2" width="500">
+</p>
 
 ---
 
@@ -55,8 +58,4 @@ pkg install jq -y
 ⚠️ Disclaimer
 
 This tool is for educational purposes only.
-Please use responsibly and respect others’ privacy.
-
-<p align="center">
-  <img src="images/demo2.png" alt="Demo Screenshot 2" width="500">
-</p>
+Please use responsibly and respect others’ privacy
