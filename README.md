@@ -4,9 +4,9 @@
 Want detailed info on any TikTok user without logging in or using API keys? **Mit tc by Amos** has you covered!  
 
 <div align="center">
-  <img src="src/img1.png" alt="Demo Screenshot 1" width="400">
-  <img src="src/img2.png" alt="Demo Screenshot 2" width="400">
-    <img src="src/img3.png" alt="profile" width="400">
+  <img src="src/img1.png" alt="Demo Screenshot 1" width="400" height="500">
+  <img src="src/img2.png" alt="Demo Screenshot 2" width="400" height="500">
+    <img src="src/img3.png" alt="profile" width="400" height="500">
 </div>
 
 ---
