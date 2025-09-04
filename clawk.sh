@@ -1,22 +1,44 @@
 #!/bin/bash
-# Encrypted TikTok scraper (base64 wrapped)
+# Encrypted TikTok scraper with colored banner
 
 base64 -d << 'EOF' | bash
-IyEvYmluL2Jhc2gKCiMgQXV0aG9yOiBhbW9za2ltMzE4CiMgR2l0SHViOiBnaXRodWIuY29tL2Ftb3NraW0zMTgKCiMgQ29sb3JzCm5jPSJcZVswbSIKYm9sZD0iXGVbMW0iCnVuZGVybGluZT0iXGVbNG0iCmJvbGRfZ3JlZW49IlxlWzE7MzJtIgpib2xkX3JlZD0iXGVbMTszMW0iCmJvbGRfeWVsbG93PSJcZVsxOzMzbSIKCiMgRGVwZW5kZW5jeSBjaGVjawpmb3IgY21kIGluIGN1cmwganE7IGRvCiAgICBpZiAhIGNvbW1hbmQgLXYgIiRjbWQiICY+L2Rldi9udWxsOyB0aGVuCiAgICAgICAgZWNobyAiRXJyb3I6ICRjbWQgaXMgcmVxdWlyZWQgYnV0IG5vdCBpbnN0YWxsZWQuIiA+JjIKICAgICAgICBleGl0IDEKICAgIGZpCmRvbmUKCiMgQmFubmVyCnByaW50X2Jhbm5lcigpIHsKICAgIGNsZWFyCiAgICBsb2dvX2xpbmVzPSgKICAgICMg MIKTCKIM (warm tones: red → yellow)
-    "\e[31m███╗   ███╗██╗██╗  ██╗████████╗ ██████╗  ██████╗██╗  ██╗\e[0m"
-    "\e[33m████╗ ████║██║██║ ██╔╝╚══██╔══╝██╔═══██╗██╔════╝██║ ██╔╝\e[0m"
-    "\e[31m██╔████╔██║██║█████╔╝    ██║   ██║   ██║██║     █████╔╝ \e[0m"
-    "\e[33m██║╚██╔╝██║██║██╔═██╗    ██║   ██║   ██║██║     ██╔═██╗ \e[0m"
-    "\e[31m██║ ╚═╝ ██║██║██║  ██╗   ██║   ╚██████╔╝╚██████╗██║  ██╗\e[0m"
-    "\e[33m╚═╝     ╚═╝╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝  ╚═════╝╚═╝  ╚═╝\e[0m"
+#!/bin/bash
 
-    # TIKTOK (cool tones: cyan → magenta → blue)
-    "\e[36m████████╗██╗██╗  ██╗████████╗ ██████╗  ██████╗██╗  ██╗\e[0m"
-    "\e[35m╚══██╔══╝██║██║ ██╔╝╚══██╔══╝██╔═══██╗██╔════╝██║ ██╔╝\e[0m"
-    "\e[34m   ██║   ██║█████╔╝    ██║   ██║   ██║██║     █████╔╝ \e[0m"
-    "\e[36m   ██║   ██║██╔═██╗    ██║   ██║   ██║██║     ██╔═██╗ \e[0m"
-    "\e[35m   ██║   ██║██║  ██╗   ██║   ╚██████╔╝╚██████╗██║  ██╗\e[0m"
-    "\e[34m   ╚═╝   ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝  ╚═════╝╚═╝  ╚═╝\e[0m"
+# Author: amoskim318
+# GitHub: github.com/amoskim318
+
+# Colors
+nc="\e[0m"
+bold="\e[1m"
+underline="\e[4m"
+bold_green="\e[1;32m"
+bold_red="\e[1;31m"
+bold_yellow="\e[1;33m"
+
+# Dependency check
+for cmd in curl jq; do
+    if ! command -v "$cmd" &>/dev/null; then
+        echo "Error: $cmd is required but not installed." >&2
+        exit 1
+    fi
+done
+
+# Banner
+print_banner() {
+    clear
+    logo_lines=(
+"\e[31m███╗   ███╗██╗██╗  ██╗████████╗ ██████╗  ██████╗██╗  ██╗\e[0m"
+"\e[33m████╗ ████║██║██║ ██╔╝╚══██╔══╝██╔═══██╗██╔════╝██║ ██╔╝\e[0m"
+"\e[31m██╔████╔██║██║█████╔╝    ██║   ██║   ██║██║     █████╔╝ \e[0m"
+"\e[33m██║╚██╔╝██║██║██╔═██╗    ██║   ██║   ██║██║     ██╔═██╗ \e[0m"
+"\e[31m██║ ╚═╝ ██║██║██║  ██╗   ██║   ╚██████╔╝╚██████╗██║  ██╗\e[0m"
+"\e[33m╚═╝     ╚═╝╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝  ╚═════╝╚═╝  ╚═╝\e[0m"
+"\e[36m████████╗██╗██╗  ██╗████████╗ ██████╗  ██████╗██╗  ██╗\e[0m"
+"\e[35m╚══██╔══╝██║██║ ██╔╝╚══██╔══╝██╔═══██╗██╔════╝██║ ██╔╝\e[0m"
+"\e[34m   ██║   ██║█████╔╝    ██║   ██║   ██║██║     █████╔╝ \e[0m"
+"\e[36m   ██║   ██║██╔═██╗    ██║   ██║   ██║██║     ██╔═██╗ \e[0m"
+"\e[35m   ██║   ██║██║  ██╗   ██║   ╚██████╔╝╚██████╗██║  ██╗\e[0m"
+"\e[34m   ╚═╝   ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝  ╚═════╝╚═╝  ╚═╝\e[0m"
     )
 
     for line in "${logo_lines[@]}"; do
