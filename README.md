@@ -1,13 +1,12 @@
+
 # 🚀 Mit tc by Amos – TikTok User Info Scraper  
 
 Want detailed info on any TikTok user without logging in or using API keys? **Mit tc by Amos** has you covered!  
 
-<p align="center">
-  <img src="images/demo1.png" alt="Demo Screenshot 1" width="500">
-</p>
-<p align="center">
-  <img src="images/demo2.png" alt="Demo Screenshot 2" width="500">
-</p>
+<div align="center">
+  <img src="images/demo1.png" alt="Demo Screenshot 1" width="400">
+  <img src="images/demo2.png" alt="Demo Screenshot 2" width="400">
+</div>
 
 ---
 
@@ -58,4 +57,4 @@ pkg install jq -y
 ⚠️ Disclaimer
 
 This tool is for educational purposes only.
-Please use responsibly and respect others’ privacy
+Please use responsibly and respect others’ privacy.
