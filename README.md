@@ -6,15 +6,21 @@ Want detailed info on any TikTok user without logging in or using API keys? **Mi
   <img src="images/demo1.png" alt="Demo Screenshot 1" width="500">
 </p>
 
-✅ **Fetch details like:**  
-- Followers count 👥  
-- Video count 🎥  
-- Total likes ❤️  
-- And more!  
+---
+
+## ✅ Features  
+
+Fetch TikTok user details such as:  
+- 👥 Followers count  
+- 🎥 Video count  
+- ❤️ Total likes  
+- 📊 And more!  
 
 ---
 
 ## 💻 Installation  
+
+Clone the repository and set up the tool:  
 
 ```bash
 git clone https://github.com/amoskim318/MiktcTITOk.git
@@ -26,6 +32,8 @@ chmod +x clawk.sh
 ---
 
 ⚡ Usage
+
+Run the tool with either @username or username:
 
 ./clawk.sh <@username>
 # or
@@ -47,16 +55,8 @@ pkg install jq -y
 ⚠️ Disclaimer
 
 This tool is for educational purposes only.
-Please use responsibly and respect privacy.
-
-
----
+Please use responsibly and respect others’ privacy.
 
 <p align="center">
   <img src="images/demo2.png" alt="Demo Screenshot 2" width="500">
 </p>
----
-
-🔖 Hashtags
-
-#TikTok #TikTokTools #Coding #TechTools #DataScraper #OpenSource #AmosTools #MitTC #Programming #InfoScraper #TechHacks #DeveloperTools #SocialMediaTools
